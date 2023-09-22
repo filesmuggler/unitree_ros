@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(unitree_legged_control)
+set(PLATFORM arm64)
 
 find_package(catkin REQUIRED COMPONENTS
     controller_interface
@@ -29,4 +30,9 @@ add_library( unitree_legged_control
     src/joint_controller.cpp
 )
 add_dependencies(${PROJECT_NAME} unitree_legged_msgs_gencpp)
-target_link_libraries(unitree_legged_control ${catkin_LIBRARIES} unitree_joint_control_tool)
+if(${PLATFORM} STREQUAL "arm64")
+    target_link_libraries(unitree_legged_control ${catkin_LIBRARIES} unitree_joint_control_tool_arm64)
+else()
+    target_link_libraries(unitree_legged_control ${catkin_LIBRARIES} unitree_joint_control_tool)
+endif()
+

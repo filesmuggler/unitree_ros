@@ -39,7 +39,7 @@
     </plugin>
   </gazebo>
   <!-- Show the trajectory of trunk center. -->
-  <gazebo>
+  <!-- <gazebo>
     <plugin filename="libLinkPlot3DPlugin.so" name="3dplot">
       <frequency>10</frequency>
       <plot>
@@ -48,7 +48,7 @@
         <material>Gazebo/Yellow</material>
       </plot>
     </plugin>
-  </gazebo>
+  </gazebo> -->
   <!-- Show the trajectory of foot. You can add another trajectory about another foot. -->
   <!-- <gazebo>
         <plugin name="3dplot" filename="libLinkPlot3DPlugin.so">
@@ -60,7 +60,7 @@
             </plot>
         </plugin>
     </gazebo> -->
-  <gazebo>
+  <!-- <gazebo>
     <plugin filename="libgazebo_ros_force.so" name="gazebo_ros_force">
       <bodyName>trunk</bodyName>
       <topicName>/apply_force/trunk</topicName>
@@ -84,7 +84,7 @@
       </plugin>
       <pose>0 0 0 0 0 0</pose>
     </sensor>
-  </gazebo>
+  </gazebo> -->
   <!-- Depth camera -->
   <!-- <gazebo>
         <plugin name="camera_plugin" filename="libgazebo_ros_openni_kinect.so">
@@ -198,7 +198,7 @@
     </sensor>
   </gazebo>
   <!-- Foot contacts. -->
-  <gazebo reference="FR_calf">
+  <!-- <gazebo reference="FR_calf">
     <sensor name="FR_foot_contact" type="contact">
       <update_rate>100</update_rate>
       <plugin filename="libunitreeFootContactPlugin.so" name="contactPlugin"/>
@@ -233,9 +233,9 @@
         <collision>RL_calf_fixed_joint_lump__RL_foot_collision_1</collision>
       </contact>
     </sensor>
-  </gazebo>
+  </gazebo> -->
   <!-- Visualization of Foot contacts. -->
-  <gazebo reference="FR_foot">
+  <!-- <gazebo reference="FR_foot">
     <visual>
       <plugin filename="libunitreeDrawForcePlugin.so" name="drawForcePlugin">
         <topicName>FR_foot_contact</topicName>
@@ -282,9 +282,9 @@
     <mu1>0.2</mu1>
     <mu2>0.2</mu2>
     <material>Gazebo/Red</material>
-  </gazebo>
+  </gazebo> -->
   <!-- FL leg -->
-  <gazebo reference="FL_hip">
+  <!-- <gazebo reference="FL_hip">
     <mu1>0.2</mu1>
     <mu2>0.2</mu2>
     <material>Gazebo/DarkGrey</material>
@@ -309,9 +309,9 @@
     <material>Gazebo/DarkGrey</material>
     <kp value="1000000.0"/>
     <kd value="1.0"/>
-  </gazebo>
+  </gazebo> -->
   <!-- FR leg -->
-  <gazebo reference="FR_hip">
+  <!-- <gazebo reference="FR_hip">
     <mu1>0.2</mu1>
     <mu2>0.2</mu2>
     <material>Gazebo/DarkGrey</material>
@@ -336,9 +336,9 @@
     <material>Gazebo/DarkGrey</material>
     <kp value="1000000.0"/>
     <kd value="1.0"/>
-  </gazebo>
+  </gazebo> -->
   <!-- RL leg -->
-  <gazebo reference="RL_hip">
+  <!-- <gazebo reference="RL_hip">
     <mu1>0.2</mu1>
     <mu2>0.2</mu2>
     <material>Gazebo/DarkGrey</material>
@@ -363,9 +363,9 @@
     <material>Gazebo/DarkGrey</material>
     <kp value="1000000.0"/>
     <kd value="1.0"/>
-  </gazebo>
+  </gazebo> -->
   <!-- RR leg -->
-  <gazebo reference="RR_hip">
+  <!-- <gazebo reference="RR_hip">
     <mu1>0.2</mu1>
     <mu2>0.2</mu2>
     <material>Gazebo/DarkGrey</material>
@@ -390,7 +390,7 @@
     <material>Gazebo/DarkGrey</material>
     <kp value="1000000.0"/>
     <kd value="1.0"/>
-  </gazebo>
+  </gazebo> -->
   <!-- <xacro:include filename="$(find go1_gazebo)/launch/stairs.urdf.xacro"/> -->
   <!-- <xacro:stairs stairs="15" xpos="0" ypos="0" zpos="0" /> -->
   <!-- Rotor related joint and link is only for demonstrate location. -->
@@ -1345,9 +1345,9 @@
   </joint>
   <link name="camera_optical_face">
         </link>
-  <gazebo reference="camera_face">
+  <!-- <gazebo reference="camera_face"> -->
     <!-- <material>Gazebo/Black</material> -->
-    <sensor name="camera_face_camera" type="depth">
+    <!-- <sensor name="camera_face_camera" type="depth">
       <update_rate>16</update_rate>
       <camera>
         <horizontal_fov>2.094</horizontal_fov>
@@ -1369,9 +1369,9 @@
         <imageTopicName>/camera_face/color/image_raw</imageTopicName>
         <cameraInfoTopicName>/camera_face/color/camera_info</cameraInfoTopicName>
         <depthImageTopicName>/camera_face/depth/image_raw</depthImageTopicName>
-        <depthImageInfoTopicName>/camera_face/depth/camera_info</depthImageInfoTopicName>
+        <depthImageInfoTopicName>/camera_face/depth/camera_info</depthImageInfoTopicName>-->
         <!-- <pointCloudTopicName>/camera_${name}/depth/points</pointCloudTopicName> -->
-        <pointCloudTopicName>/cam1/point_cloud_face</pointCloudTopicName>
+        <!-- <pointCloudTopicName>/cam1/point_cloud_face</pointCloudTopicName>
         <frameName>camera_optical_face</frameName>
         <pointCloudCutoff>0.1</pointCloudCutoff>
         <pointCloudCutoffMax>1.5</pointCloudCutoffMax>
@@ -1387,7 +1387,7 @@
         <hackBaseline>0</hackBaseline>
       </plugin>
     </sensor>
-  </gazebo>
+  </gazebo> -->
   <joint name="camera_joint_chin" type="fixed">
     <origin rpy="3.141592653589793 1.5707963267948966 0" xyz="0.2522 0.0125 -0.0436"/>
     <parent link="trunk"/>
@@ -1419,9 +1419,9 @@
   </joint>
   <link name="camera_optical_chin">
         </link>
-  <gazebo reference="camera_chin">
+  <!-- <gazebo reference="camera_chin"> -->
     <!-- <material>Gazebo/Black</material> -->
-    <sensor name="camera_chin_camera" type="depth">
+    <!-- <sensor name="camera_chin_camera" type="depth">
       <update_rate>16</update_rate>
       <camera>
         <horizontal_fov>2.094</horizontal_fov>
@@ -1443,9 +1443,9 @@
         <imageTopicName>/camera_chin/color/image_raw</imageTopicName>
         <cameraInfoTopicName>/camera_chin/color/camera_info</cameraInfoTopicName>
         <depthImageTopicName>/camera_chin/depth/image_raw</depthImageTopicName>
-        <depthImageInfoTopicName>/camera_chin/depth/camera_info</depthImageInfoTopicName>
+        <depthImageInfoTopicName>/camera_chin/depth/camera_info</depthImageInfoTopicName> -->
         <!-- <pointCloudTopicName>/camera_${name}/depth/points</pointCloudTopicName> -->
-        <pointCloudTopicName>/cam2/point_cloud_chin</pointCloudTopicName>
+        <!-- <pointCloudTopicName>/cam2/point_cloud_chin</pointCloudTopicName>
         <frameName>camera_optical_chin</frameName>
         <pointCloudCutoff>0.1</pointCloudCutoff>
         <pointCloudCutoffMax>1.5</pointCloudCutoffMax>
@@ -1461,7 +1461,7 @@
         <hackBaseline>0</hackBaseline>
       </plugin>
     </sensor>
-  </gazebo>
+  </gazebo> -->
   <joint name="camera_joint_left" type="fixed">
     <origin rpy="3.141592653589793 0.2618 1.5707963267948966" xyz="-0.066 0.082 -0.0176"/>
     <parent link="trunk"/>
@@ -1493,9 +1493,9 @@
   </joint>
   <link name="camera_optical_left">
         </link>
-  <gazebo reference="camera_left">
+  <!-- <gazebo reference="camera_left"> -->
     <!-- <material>Gazebo/Black</material> -->
-    <sensor name="camera_left_camera" type="depth">
+    <!-- <sensor name="camera_left_camera" type="depth">
       <update_rate>16</update_rate>
       <camera>
         <horizontal_fov>2.094</horizontal_fov>
@@ -1517,9 +1517,9 @@
         <imageTopicName>/camera_left/color/image_raw</imageTopicName>
         <cameraInfoTopicName>/camera_left/color/camera_info</cameraInfoTopicName>
         <depthImageTopicName>/camera_left/depth/image_raw</depthImageTopicName>
-        <depthImageInfoTopicName>/camera_left/depth/camera_info</depthImageInfoTopicName>
+        <depthImageInfoTopicName>/camera_left/depth/camera_info</depthImageInfoTopicName> -->
         <!-- <pointCloudTopicName>/camera_${name}/depth/points</pointCloudTopicName> -->
-        <pointCloudTopicName>/cam3/point_cloud_left</pointCloudTopicName>
+        <!-- <pointCloudTopicName>/cam3/point_cloud_left</pointCloudTopicName>
         <frameName>camera_optical_left</frameName>
         <pointCloudCutoff>0.1</pointCloudCutoff>
         <pointCloudCutoffMax>1.5</pointCloudCutoffMax>
@@ -1535,7 +1535,7 @@
         <hackBaseline>0</hackBaseline>
       </plugin>
     </sensor>
-  </gazebo>
+  </gazebo> -->
   <joint name="camera_joint_right" type="fixed">
     <origin rpy="3.141592653589793 0.2618 -1.5707963267948966" xyz="-0.041 -0.082 -0.0176"/>
     <parent link="trunk"/>
@@ -1567,9 +1567,9 @@
   </joint>
   <link name="camera_optical_right">
         </link>
-  <gazebo reference="camera_right">
+  <!-- <gazebo reference="camera_right"> -->
     <!-- <material>Gazebo/Black</material> -->
-    <sensor name="camera_right_camera" type="depth">
+    <!-- <sensor name="camera_right_camera" type="depth">
       <update_rate>16</update_rate>
       <camera>
         <horizontal_fov>2.094</horizontal_fov>
@@ -1591,9 +1591,9 @@
         <imageTopicName>/camera_right/color/image_raw</imageTopicName>
         <cameraInfoTopicName>/camera_right/color/camera_info</cameraInfoTopicName>
         <depthImageTopicName>/camera_right/depth/image_raw</depthImageTopicName>
-        <depthImageInfoTopicName>/camera_right/depth/camera_info</depthImageInfoTopicName>
+        <depthImageInfoTopicName>/camera_right/depth/camera_info</depthImageInfoTopicName> -->
         <!-- <pointCloudTopicName>/camera_${name}/depth/points</pointCloudTopicName> -->
-        <pointCloudTopicName>/cam4/point_cloud_right</pointCloudTopicName>
+        <!-- <pointCloudTopicName>/cam4/point_cloud_right</pointCloudTopicName>
         <frameName>camera_optical_right</frameName>
         <pointCloudCutoff>0.1</pointCloudCutoff>
         <pointCloudCutoffMax>1.5</pointCloudCutoffMax>
@@ -1609,7 +1609,7 @@
         <hackBaseline>0</hackBaseline>
       </plugin>
     </sensor>
-  </gazebo>
+  </gazebo> -->
   <joint name="camera_joint_rearDown" type="fixed">
     <origin rpy="3.141592653589793 1.5707963267948966 0" xyz="-0.0825 0.0125 -0.04365"/>
     <parent link="trunk"/>
@@ -1641,9 +1641,9 @@
   </joint>
   <link name="camera_optical_rearDown">
         </link>
-  <gazebo reference="camera_rearDown">
+  <!-- <gazebo reference="camera_rearDown"> -->
     <!-- <material>Gazebo/Black</material> -->
-    <sensor name="camera_rearDown_camera" type="depth">
+    <!-- <sensor name="camera_rearDown_camera" type="depth">
       <update_rate>16</update_rate>
       <camera>
         <horizontal_fov>2.094</horizontal_fov>
@@ -1665,9 +1665,9 @@
         <imageTopicName>/camera_rearDown/color/image_raw</imageTopicName>
         <cameraInfoTopicName>/camera_rearDown/color/camera_info</cameraInfoTopicName>
         <depthImageTopicName>/camera_rearDown/depth/image_raw</depthImageTopicName>
-        <depthImageInfoTopicName>/camera_rearDown/depth/camera_info</depthImageInfoTopicName>
+        <depthImageInfoTopicName>/camera_rearDown/depth/camera_info</depthImageInfoTopicName> -->
         <!-- <pointCloudTopicName>/camera_${name}/depth/points</pointCloudTopicName> -->
-        <pointCloudTopicName>/cam5/point_cloud_rearDown</pointCloudTopicName>
+        <!-- <pointCloudTopicName>/cam5/point_cloud_rearDown</pointCloudTopicName>
         <frameName>camera_optical_rearDown</frameName>
         <pointCloudCutoff>0.1</pointCloudCutoff>
         <pointCloudCutoffMax>1.5</pointCloudCutoffMax>
@@ -1683,7 +1683,7 @@
         <hackBaseline>0</hackBaseline>
       </plugin>
     </sensor>
-  </gazebo>
+  </gazebo> -->
   <joint name="camera_laserscan_joint_left" type="fixed">
     <origin rpy="0 0.2618 0" xyz="0 0 0"/>
     <parent link="camera_left"/>
