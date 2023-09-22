@@ -12,6 +12,7 @@
     <xacro:include filename="$(find go1_description)/xacro/depthCamera.xacro"/>
     <xacro:include filename="$(find go1_description)/xacro/ultraSound.xacro"/>
     <!-- <xacro:include filename="$(find go1_gazebo)/launch/stairs.urdf.xacro"/> -->
+    <!--<xacro:include filename="$(find go1_description)/xacro/box.xacro"/>-->
 
     <!-- <xacro:stairs stairs="15" xpos="0" ypos="0" zpos="0" /> -->
 
@@ -74,6 +75,34 @@
     </joint>
 
     <link name="imu_link">
+        <inertial>
+            <mass value="0.001"/>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001"/>
+        </inertial>
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <box size="0.001 0.001 0.001"/>
+            </geometry>
+            <!-- <material name="red"/> -->
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <box size=".001 .001 .001"/>
+            </geometry>
+        </collision>
+    </link>
+
+
+    <joint name="xsense_joint" type="fixed">
+        <parent link="trunk"/>
+        <child link="xsense_link"/>
+        <origin rpy="0 0 0" xyz="-0.01592 -0.06659 0.617"/>
+    </joint>
+
+    <link name="xsense_link">
         <inertial>
             <mass value="0.001"/>
             <origin rpy="0 0 0" xyz="0 0 0"/>
